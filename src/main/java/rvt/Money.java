@@ -9,7 +9,12 @@ public class Money {
         this.euros = euros;
         this.cents = cents;
     }
-
+    public Money(int euros) {
+        this(euros, 0);
+    }
+    public Money() {
+        this(0, 0);
+    }
     public int euros() {
         return euros;
     }

@@ -34,4 +34,17 @@ public class MoneyTest {
         assertEquals(1, c.euros());
         assertEquals(20,c.cents());
     }
+    @Test
+    public void valuesTest()
+    {
+        Money a = new Money();
+        assertEquals(0, a.cents());
+        assertEquals(0, a.euros());
+        a = new Money(5);
+        assertEquals(0, a.cents());
+        assertEquals(5, a.euros());
+        a = new Money(5, 4);
+        assertEquals(4, a.cents());
+        assertEquals(5, a.euros());
+    }
 }
