@@ -32,6 +32,12 @@ public class Money {
         return euros + "." + zero + cents + "€";
     }
     
+    public Money plus(int euros)
+    {
+        Money newMoney = new Money(euros);
+        return plus(newMoney);
+    }
+
     public Money plus(Money addition) {
         int a;
         int b;
