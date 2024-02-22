@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>User Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/src/main/resources/Static/css/register.css">
+</head>
+<div align="center">
+    <h1>User Register</h1>
+    <form method="post" th:action="@{/register}" th:object="${user}">
+
+        <label for="fname" >First name:</label>
+        <input type="text" th:field="*{name}" id="fname" name="fname" required><br>
+
+        <label for="email">Email:</label>
+        <input type="text" th:field="*{email}" id="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" th:field="*{password}" id="password" name="password" required><br>
+
+        <label for="birthday">Birthday(dd-mm-yyyy):</label>
+        <input type="date" id="birthday" th:field="*{birthday}" name="birthday"><br>
+
+        <label for="groups">Groups:</label>
+        <select id="groups" name="groups" th:field="*{groups}">
+            <option value="DP2-1">DP2-1</option>
+            <option value="DP2-2">DP2-2</option>
+            <option value="DP2-3">DP2-3</option>
+            <option value="DP2-4">DP2-4</option><br>
+        </select><br>
+
+        <label for="gender">Gender:</label>
+        <input type="radio" id="gender" th:field="*{gender}" name="gender" value="Male">Male
+        <input type="radio" id="gender" name="gender" th:field="*{gender}" value="Female">Female<br>
+
+
+        <label for="married">Married?</label>
+        <input type="checkbox" id="married" th:field="*{married}" name="married"><br>
+
+        <label for="note">Note:</label>
+        <textarea id="note" name="note" th:field="*{note}" rows="4" cols="50"></textarea><br>
+
+        <input type="submit" value="Register">
+    </form>
+</div>
+</html>
